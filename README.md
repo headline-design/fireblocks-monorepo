@@ -103,4 +103,8 @@ Learn more about the power of Turborepo:
 
 (Note - The frontend is deployed, but the repo needs to be run locally to operate the whole app. The backend still needs to be converted to support the monorepo build system).
 
-Video Demo - <video src='/fireblocks-monorepo-demo.mp4' width=180/>
+Video Demo - 
+
+https://github.com/headline-design/fireblocks-monorepo/assets/85418370/3f27c54b-68f2-4f4d-816d-7c03d24d993c
+
+
