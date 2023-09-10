@@ -1,4 +1,4 @@
-import { createConnection, getConnection } from "typeorm";
+import { DataSource } from "typeorm";
 import { Device } from "../model/device";
 import { Message } from "../model/message";
 import { User } from "../model/user";
@@ -11,7 +11,7 @@ describe("message subscriber", () => {
   const physicalDeviceId = "333";
 
   beforeEach(async () => {
-    const conn = await createConnection({
+    const conn = await new DataSource({
       type: "mysql",
       database: ":memory:",
       dropSchema: true,
@@ -20,10 +20,12 @@ describe("message subscriber", () => {
       synchronize: true,
       logging: false,
       ssl: {
-        rejectUnauthorized: true
-    }
+        rejectUnauthorized: true,
+      },
     });
     await conn.synchronize();
+
+    console.log("conn", conn);
 
     const user = new User();
     user.sub = "sub";
@@ -38,11 +40,6 @@ describe("message subscriber", () => {
     device.userId = user.id;
     device.walletId = wallet.id;
     await device.save();
-  });
-
-  afterEach(async () => {
-    const conn = getConnection();
-    return conn.close();
   });
 
   it("should resolve wait for messages on message insert", async () => {

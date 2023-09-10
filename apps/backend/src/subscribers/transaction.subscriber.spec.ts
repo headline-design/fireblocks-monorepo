@@ -1,4 +1,4 @@
-import { createConnection, getConnection } from "typeorm";
+import { DataSource, createConnection, getConnection } from "typeorm";
 import { Device } from "../model/device";
 import { Message } from "../model/message";
 import { User } from "../model/user";
@@ -20,7 +20,7 @@ describe("transaction subscriber", () => {
   const deviceId = "123";
 
   beforeEach(async () => {
-    const conn = await createConnection({
+    const conn = await new DataSource({
       type: "mysql",
       database: ":memory:",
       dropSchema: true,
@@ -28,9 +28,6 @@ describe("transaction subscriber", () => {
       entities: [Wallet, Device, Message, User, Transaction],
       synchronize: true,
       logging: false,
-      ssl: {
-        rejectUnauthorized: true
-    }
     });
     await conn.synchronize();
 

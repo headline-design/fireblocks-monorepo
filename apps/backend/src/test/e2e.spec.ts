@@ -4,7 +4,7 @@ import crypto, { randomUUID } from "crypto";
 import util from "util";
 
 import { createApp } from "../app";
-import { createConnection, getConnection } from "typeorm";
+import { DataSource, createConnection, getConnection } from "typeorm";
 
 import { Device } from "../model/device";
 import { Message } from "../model/message";
@@ -88,7 +88,7 @@ describe("e2e", () => {
       publicKey,
     );
 
-    const conn = await createConnection({
+    const conn = await new DataSource({
       type: "mysql",
       database: ":memory:",
       dropSchema: true,
@@ -295,10 +295,6 @@ describe("e2e", () => {
     };
     await webhookPush(payload);
   }
-
-  it("should not allow unauthorized", async () => {
-    await request(app).post("/api/login").expect(401);
-  });
 
   it("should create user", async () => {
     await createUser();

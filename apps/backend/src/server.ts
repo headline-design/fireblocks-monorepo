@@ -56,13 +56,10 @@ const clients = {
 };
 
 const app = createApp(authOptions, clients, webhookPublicKey);
-console.log("app", app);
 
 AppDataSource.initialize()
   .then(() => {
     console.log("Data Source has been initialized!");
-console.log(clients)
-console.log(authOptions)
 
     app.listen(port, () => {
       console.log(`Server is running at http://localhost:${port}`);

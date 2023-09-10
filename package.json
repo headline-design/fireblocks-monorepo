@@ -12,7 +12,7 @@
     "tsconfig": "*",
     "turbo": "latest"
   },
-  "name": "fireblocks-monorepo",
+  "name": "fireblocks-ncw-monorepo",
   "packageManager": "yarn@1.22.17",
   "workspaces": [
     "apps/*",

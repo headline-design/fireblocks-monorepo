@@ -28,9 +28,7 @@ function createApp(
   webhookPublicKey: string,
 ) {
   const validateUser = checkJwt(authOpts);
-  console.log("validateUser", validateUser);
-  console.log("clients", clients);
-console.log("ORIGIN_WEB_SDK", ORIGIN_WEB_SDK);
+
   const deviceRoute = createDeviceRoute(clients);
   const webhookRoute = createWebhook(clients, webhookPublicKey);
   const userContoller = new UserController(new UserService());
@@ -43,9 +41,6 @@ console.log("ORIGIN_WEB_SDK", ORIGIN_WEB_SDK);
   app.use(bodyParser.json({ limit: "50mb" }));
 
   app.get("/", (req: Request, res: Response) => res.send("OK"));
-
-  console.log("validateUser", validateUser);
-  console.log("res", authOpts)
 
   app.post("/api/login", validateUser, userContoller.login.bind(userContoller));
   app.use("/api/devices", validateUser, deviceRoute);

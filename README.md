@@ -1,13 +1,19 @@
-# Turborepo starter
+<a href="https://github.com">
+  <img alt="Monorepo support for Fireblocks Demo." src="https://user-images.githubusercontent.com/fireblocks-hero.png">
+  <h1 align="center">Fireblocks NCW Monorepo</h1>
+</a>
 
-This is an official starter Turborepo.
+# Fireblocks NCW Monorepo starter
 
-## Using this example
+This is an demo project for the Permissionless Hackathon to demonstrate how to integrate Fireblocks' Non-Custodial Wallets SDK with the latest Turborepo build system.
 
-Run the following command:
+## Using this Fireblocks MonoRepo
+
+Run the following commands:
 
 ```sh
-npx create-turbo@latest
+yarn install
+yarn dev
 ```
 
 ## What's inside?
