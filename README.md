@@ -1,5 +1,5 @@
 <a href="https://github.com">
-  <img alt="Monorepo support for Fireblocks Demo." src="https://user-images.githubusercontent.com/fireblocks-hero.png">
+  <img alt="Monorepo support for Fireblocks Demo." src="[https://user-images.githubusercontent.com/fireblocks-hero.png](https://github.com/headline-design/fireblocks-monorepo/blob/main/fireblocks-hero.png)">
   <h1 align="center">Fireblocks NCW Monorepo</h1>
 </a>
 
