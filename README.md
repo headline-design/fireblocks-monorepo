@@ -7,6 +7,16 @@
 
 This is an demo project for the Permissionless Hackathon to demonstrate how to integrate Fireblocks' Non-Custodial Wallets SDK with the latest Turborepo build system.
 
+## What is Turborepo?
+
+Turborepo is a build system for monorepos. It is designed to be fast, flexible, and easy to use. It is built on top of [ESBuild](https://esbuild.github.io/), [Vercel](https://vercel.com/), and [Yarn Workspaces](https://classic.yarnpkg.com/en/docs/workspaces/).
+
+## Why Turborepo?
+
+Turborepo can tremendously improve the development experience for Web3 builders. By managing, building, and inteligently caching your Web3 apps in a monorepo, Turborepo can save you time and money.
+
+For complex applications and full stack applications like the Fireblocks NCW, Turborepo can be a game changer. It can help you manage your entire stack in a single repository, and it can help you build and deploy your entire stack in a single command.
+
 ## Using this Fireblocks MonoRepo
 
 Run the following commands:
