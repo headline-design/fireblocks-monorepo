@@ -19,7 +19,7 @@ export const waitForTransactionTimeout = 10_000;
 
 const ORIGIN_WEB_SDK = [
   "http://localhost:5173",
-  "https://fireblocks.github.io",
+  "https://fireblocks-monorepo-frontend.vercel.app",
 ];
 
 function createApp(
