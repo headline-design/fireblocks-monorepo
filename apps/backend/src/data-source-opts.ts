@@ -22,6 +22,10 @@ const opts: DataSourceOptions = {
   entities: [User, Wallet, Device, Message, Transaction],
   subscribers: [MessageSubscriber, TransactionSubscriber],
   migrations: ["./dist/migrations/*.js"],
+  ssl: {
+    rejectUnauthorized: true
+}
+
 };
 
 export default opts;

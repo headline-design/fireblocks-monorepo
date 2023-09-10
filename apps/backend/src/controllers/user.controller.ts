@@ -5,6 +5,7 @@ export class UserController {
   constructor(private readonly service: UserService) {}
 
   async login(req: Request, res: Response, next: NextFunction) {
+    console.log("UserController", UserController);
     try {
       const { auth } = req;
       if (!auth) {

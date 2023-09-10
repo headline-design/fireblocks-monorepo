@@ -6,6 +6,8 @@ import { Auth0TokenProvider } from "./Auth0TokenProvider";
 export const Auth0Login: ReactFCC = ({ children }) => {
   const { isAuthenticated, loginWithRedirect, isLoading } = useAuth0();
 
+console.log("Auth0Login: isAuthenticated", isAuthenticated);
+
   if (isAuthenticated) {
     return <Auth0TokenProvider>{children}</Auth0TokenProvider>;
   }

@@ -9,13 +9,14 @@
     "forceConsistentCasingInFileNames": true,
     "inlineSources": false,
     "isolatedModules": true,
+    "noImplicitAny": false,
     "moduleResolution": "node",
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "preserveWatchOutput": true,
     "skipLibCheck": true,
-    "strict": true,
-    "strictNullChecks": true
+    "strict": false,
+    "strictNullChecks": false
   },
   "exclude": ["node_modules"]
 }

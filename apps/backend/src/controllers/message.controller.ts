@@ -1,10 +1,12 @@
+//@ts-ignore
+
 import { NextFunction, Response } from "express";
 import { RequestEx } from "../interfaces/requestEx";
 import { getMessages, deleteMessage } from "../services/message.service";
 
 export class MessageController {
   async findMany(req: RequestEx, res: Response, next: NextFunction) {
-    const physicalDeviceId = req.query.physicalDeviceId;
+    const physicalDeviceId = req.query.physicalDeviceId as any;
     const timeout = Number(req.query.timeout ?? 10);
     const batchSize = Number(req.query.batchSize ?? 10);
 

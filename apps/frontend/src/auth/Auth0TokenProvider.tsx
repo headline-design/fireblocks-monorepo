@@ -12,11 +12,14 @@ export const Auth0TokenProvider: React.FC<IProps> = ({ children }) => {
   const [isGettingAccessToken, setIsGettingAccessToken] = React.useState(false);
   const [token, setToken] = React.useState<string | null>(null);
 
+  console.log("Auth0TokenProvider: token", token);
+
   React.useEffect(() => {
     let isMounted = true;
     const getToken = async () => {
       setIsGettingAccessToken(true);
       const token = await getAccessTokenSilently();
+      console.log("Auth0TokenProvider: token", token);
       if (!isMounted) {
         return;
       }

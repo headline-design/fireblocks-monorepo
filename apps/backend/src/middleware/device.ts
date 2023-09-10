@@ -9,6 +9,8 @@ export const validateDevice: Handler = async function (
 ) {
   const { auth, params } = req;
   const { deviceId } = params;
+  console.log("validateDevice", validateDevice);
+  console.log("req", req);
 
   try {
     const { sub } = auth!.payload;

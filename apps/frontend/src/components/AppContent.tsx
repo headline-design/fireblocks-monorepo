@@ -9,6 +9,7 @@ import { FireblockNCWExampleActions } from "./FireblockNCWExampleActions";
 
 export const AppContent: React.FC = () => {
   const token = useAuth0AccessToken();
+console.log("AppContent: token", token);
 
   const {
     loginToDemoAppServerStatus,
@@ -29,6 +30,7 @@ export const AppContent: React.FC = () => {
 
   if (!appStoreInitialized) {
     initAppStore(token);
+    console.log("AppContent: initializing app store", token);
     return null;
   }
 

@@ -21,13 +21,16 @@ describe("transaction subscriber", () => {
 
   beforeEach(async () => {
     const conn = await createConnection({
-      type: "better-sqlite3",
+      type: "mysql",
       database: ":memory:",
       dropSchema: true,
       subscribers: [TransactionSubscriber],
       entities: [Wallet, Device, Message, User, Transaction],
       synchronize: true,
       logging: false,
+      ssl: {
+        rejectUnauthorized: true
+    }
     });
     await conn.synchronize();
 

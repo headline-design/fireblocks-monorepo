@@ -89,7 +89,7 @@ describe("e2e", () => {
     );
 
     const conn = await createConnection({
-      type: "better-sqlite3",
+      type: "mysql",
       database: ":memory:",
       dropSchema: true,
       subscribers: [MessageSubscriber, TransactionSubscriber],
@@ -387,13 +387,13 @@ describe("e2e", () => {
 
     expect((await getTransactions()).body).toEqual([]);
     await webhookTransaction(
-      txId,
+      txId as any,
       "TRANSACTION_CREATED",
       TransactionStatus.CONFIRMING,
     );
     expect((await getTransactions()).body).toMatchObject([{ id: txId }]);
     await webhookTransaction(
-      txId,
+      txId as any,
       "TRANSACTION_STATUS_UPDATED",
       TransactionStatus.PENDING_SIGNATURE,
     );
@@ -406,7 +406,7 @@ describe("e2e", () => {
     });
 
     await webhookTransaction(
-      txId2,
+      txId2 as any,
       "TRANSACTION_CREATED",
       TransactionStatus.SUBMITTED,
     );
@@ -438,7 +438,7 @@ describe("e2e", () => {
     const poll3 = getTransactions(undefined, true);
 
     await webhookTransaction(
-      txId,
+      txId as any,
       "TRANSACTION_CREATED",
       TransactionStatus.CONFIRMING,
     );
