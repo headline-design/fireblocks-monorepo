@@ -1,9 +1,10 @@
 <a href="https://github.com">
   <img alt="Monorepo support for Fireblocks Demo." src="/fireblocks-hero.png">
-  <h1 align="center">Fireblocks NCW Monorepo</h1>
 </a>
 
 # Fireblocks NCW Monorepo starter
+
+Note: Currently only runs locally. Frontend is deployed for demonstration purposes only. Run locally and set .env variables with the current .env example variables.
 
 This is an demo project for the Permissionless Hackathon to demonstrate how to integrate Fireblocks' Non-Custodial Wallets SDK with the latest Turborepo build system.
 
@@ -99,3 +100,5 @@ Learn more about the power of Turborepo:
 - [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
 - [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
 - [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+
+(Note - The frontend is deployed, but the repo needs to be run locally to operate the whole app. The backend still needs to be converted to support the monorepo build system).
